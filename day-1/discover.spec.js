@@ -1,5 +1,5 @@
 import chai from 'chai';
-import txtToArray from './txtToArray.js';
+import { toArrayOfNumbers } from '../utils/inputReader.js';
 
 import { discoverNumbersThanSum } from './discover.js';
 
@@ -9,7 +9,7 @@ describe('discoverNubmerThanSum', () => {
   let numbers;
   const target = 2020;
   beforeEach(() => {
-    numbers = txtToArray('./day-1/inputs/example.txt');
+    numbers = toArrayOfNumbers('./day-1/inputs/example.txt');
   });
   describe('given a list, a target and the quantity of number to use', () => {
     it('should return empty array if the numbers are not found it when the quantity is 1', () => {

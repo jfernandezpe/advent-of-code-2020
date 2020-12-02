@@ -1,8 +1,8 @@
-import txtToArray from '../utils/txtToArray.js';
-import { resolvePart1 } from './part1.js';
-import { resolvePart2 } from './part2.js';
+import { toArrayOfNumbers } from '../utils/inputReader.js';
+import resolvePart1 from './part1.js';
+import resolvePart2 from './part2.js';
 
-const numbers = txtToArray('./day-1/inputs/quest.txt');
+const numbers = toArrayOfNumbers('./day-1/inputs/quest.txt');
 const part1 = resolvePart1(numbers);
 const part2 = resolvePart2(numbers);
 

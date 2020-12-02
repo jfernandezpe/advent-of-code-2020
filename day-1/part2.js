@@ -1,8 +1,8 @@
 import { multiplicate } from '../utils/array.js';
 
-import { discoverNumbersThanSum } from '../utils/discover.js';
+import { discoverNumbersThanSum } from './discover.js';
 
-export const resolvePart2 = (numbers) => {
+export default (numbers) => {
   const result = discover3NumberThatSum2020(numbers);
 
   return multiplicate(result);

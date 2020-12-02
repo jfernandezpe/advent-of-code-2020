@@ -1,13 +1,13 @@
 import chai from 'chai';
-import txtToArray from '../utils/txtToArray.js';
-import { resolvePart2 } from './part2.js';
+import { toArrayOfNumbers } from '../utils/inputReader.js';
+import resolvePart2 from './part2.js';
 
 const { expect } = chai;
 
-xdescribe('day 1', () => {
+describe('day 1', () => {
   let numbers;
   beforeEach(() => {
-    numbers = txtToArray('./day-1/inputs/example.txt');
+    numbers = toArrayOfNumbers('./day-1/inputs/example.txt');
   });
   describe('resolve part 2', () => {
     describe('given the example list', () => {

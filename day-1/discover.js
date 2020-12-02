@@ -1,4 +1,4 @@
-import { removeDuplicates, removeItem, sum } from './array.js';
+import { removeDuplicates, removeItem, sum } from '../utils/array.js';
 
 // eslint-disable-next-line import/prefer-default-export
 export const discoverNumbersThanSum = (target, array, quantity) => {
