@@ -1,5 +1,5 @@
 import chai from 'chai';
-import { toArrayOfNumbers, toArrayOfText } from './inputReader.js';
+import { toArrayOfNumbers, toArrayOfText, toFieldBooleans } from './inputReader.js';
 
 const { expect } = chai;
 
@@ -23,6 +23,29 @@ describe('Input readers', () => {
         const result = toArrayOfText('./day-2/inputs/example.txt');
 
         expect(result).to.be.deep.equal(expectedList);
+      });
+    });
+  });
+  describe('toFieldOfBooleans', () => {
+    describe('given a pathfile with text', () => {
+      it('should return an array of array with booleans', () => {
+        const expectedResult = [
+          [false, false, true, true, false, false, false, false, false, false, false],
+          [true, false, false, false, true, false, false, false, true, false, false],
+          [false, true, false, false, false, false, true, false, false, true, false],
+          [false, false, true, false, true, false, false, false, true, false, true],
+          [false, true, false, false, false, true, true, false, false, true, false],
+          [false, false, true, false, true, true, false, false, false, false, false],
+          [false, true, false, true, false, true, false, false, false, false, true],
+          [false, true, false, false, false, false, false, false, false, false, true],
+          [true, false, true, true, false, false, false, true, false, false, false],
+          [true, false, false, false, true, true, false, false, false, false, true],
+          [false, true, false, false, true, false, false, false, true, false, true],
+        ];
+
+        const result = toFieldBooleans('./day-3/inputs/example.txt', '#');
+
+        expect(result).to.be.deep.equal(expectedResult);
       });
     });
   });

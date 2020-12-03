@@ -10,3 +10,10 @@ export const toArrayOfText = (filepath) => {
     .map((item) => item.trim())
     .filter((item) => !!item);
 };
+
+export const toFieldBooleans = (filepath, trueChar) => {
+  const files = toArrayOfText(filepath);
+  const field = files.map((row) => row.split(''));
+
+  return field.map((row) => row.map((cell) => cell === trueChar));
+};
