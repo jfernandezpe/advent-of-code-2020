@@ -6,6 +6,6 @@ const part1 = getNumberOfTreesOnPath(field);
 const part2 = resolvePart2(field);
 
 // eslint-disable-next-line no-console
-console.log(`Day 2, part 1: ${part1}`);
+console.log(`Day 3, part 1: ${part1}`);
 // eslint-disable-next-line no-console
-console.log(`Day 2, part 1: ${part2}`);
+console.log(`Day 3, part 1: ${part2}`);
