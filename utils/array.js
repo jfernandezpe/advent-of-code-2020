@@ -15,3 +15,17 @@ export const removeDuplicates = (array) => array.reduce((acc, item) => {
   }
   return [...acc, item];
 }, []);
+
+export const fillArray = (length, input, array = []) => {
+  if (array.length > length) {
+    return removeSurpus(array, length);
+  }
+  if (array.length < length) {
+    const biggerArray = [...array, ...input];
+    return fillArray(length, input, biggerArray);
+  }
+
+  return array;
+};
+
+const removeSurpus = (array, length) => array.slice(0, length);

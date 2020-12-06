@@ -4,7 +4,7 @@ import { resolvePart1 } from './part1.js';
 
 const { expect } = chai;
 
-describe('day 3 - part 1', () => {
+describe('day 4 - part 1', () => {
   let passports;
   beforeEach(() => {
     passports = separatedByBlankLines('./day-4/inputs/example.txt');

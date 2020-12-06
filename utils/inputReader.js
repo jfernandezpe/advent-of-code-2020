@@ -1,4 +1,5 @@
 import fs from 'fs';
+import { replaceAll } from './string.js';
 
 export const toArrayOfNumbers = (filepath) => toArrayOfText(filepath)
   .map((number) => parseInt(number, 10));
@@ -22,5 +23,5 @@ export const toFieldBooleans = (filepath, trueChar) => {
 export const separatedByBlankLines = (filepath) => {
   const result = toText(filepath).split('\n\r');
 
-  return result.map((line) => line.split('\r\n').join(' ').trim());
+  return result.map((line) => replaceAll(line, '\r\n', ' ').trim());
 };

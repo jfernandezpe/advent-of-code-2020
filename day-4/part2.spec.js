@@ -4,7 +4,7 @@ import { resolvePart2 } from './part2.js';
 
 const { expect } = chai;
 
-describe('day 3 - part 1', () => {
+describe('day 4 - part 2', () => {
   describe('resolvePart2', () => {
     it('should return mark as valid the valid password', () => {
       const validPassports = separatedByBlankLines('./day-4/inputs/example-valid.txt');

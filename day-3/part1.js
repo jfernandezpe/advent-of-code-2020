@@ -1,4 +1,5 @@
 import { toFieldBooleans } from '../utils/inputReader.js';
+import { fillArray } from '../utils/array.js';
 
 export const getFieldOfTrees = (filepath) => toFieldBooleans(filepath, '#');
 
@@ -23,20 +24,6 @@ export const expandRow = (inputRow, numOfRows, numMovInX) => {
 };
 
 export const calcRequiredColumns = (numOfRows, numMovInX) => 1 + (numOfRows - 1) * numMovInX;
-
-const fillArray = (length, input, array = []) => {
-  if (array.length > length) {
-    return removeSurpus(array, length);
-  }
-  if (array.length < length) {
-    const biggerArray = [...array, ...input];
-    return fillArray(length, input, biggerArray);
-  }
-
-  return array;
-};
-
-const removeSurpus = (array, length) => array.slice(0, length);
 
 const calcPath = (field, numMovInX) => field.map((row, index) => row[getXForY(index, numMovInX)]);
 
