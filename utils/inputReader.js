@@ -11,7 +11,7 @@ export const toArrayOfText = (filepath) => {
     .filter((item) => !!item);
 };
 
-const toText = (filepath) => fs.readFileSync(filepath, 'utf8');
+export const toText = (filepath) => fs.readFileSync(filepath, 'utf8');
 
 export const toFieldBooleans = (filepath, trueChar) => {
   const files = toArrayOfText(filepath);

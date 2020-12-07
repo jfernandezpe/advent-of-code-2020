@@ -8,4 +8,4 @@ const part2 = resolvePart2(field);
 // eslint-disable-next-line no-console
 console.log(`Day 3, part 1: ${part1}`);
 // eslint-disable-next-line no-console
-console.log(`Day 3, part 1: ${part2}`);
+console.log(`Day 3, part 2: ${part2}`);

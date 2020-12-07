@@ -9,4 +9,4 @@ const part2 = getResultPart2(passwords);
 // eslint-disable-next-line no-console
 console.log(`Day 2, part 1: ${part1}`);
 // eslint-disable-next-line no-console
-console.log(`Day 2, part 1: ${part2}`);
+console.log(`Day 2, part 2: ${part2}`);

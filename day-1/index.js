@@ -9,4 +9,4 @@ const part2 = resolvePart2(numbers);
 // eslint-disable-next-line no-console
 console.log(`Day one, part 1: ${part1}`);
 // eslint-disable-next-line no-console
-console.log(`Day one, part 1: ${part2}`);
+console.log(`Day one, part 2: ${part2}`);

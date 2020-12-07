@@ -13,7 +13,7 @@ describe('day 6 - part 1', () => {
     answerGroups = separatedByBlankLines('./day-06/inputs/example.txt');
   });
   describe('resolvePart1', () => {
-    it('should return the example value', () => {
+    it('should return the number of unique answers in the groups', () => {
       const result = resolvePart1(answerGroups);
 
       expect(result).to.be.equal(11);

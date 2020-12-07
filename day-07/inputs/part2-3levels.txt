@@ -1,0 +1,4 @@
+shiny gold bags contain 2 dark red bags.
+dark red bags contain 2 dark orange bags.
+dark orange bags contain 2 dark violet bags.
+dark violet bags contain no other bags.

@@ -11,4 +11,4 @@ const part2 = resolvePart2(passport);
 // eslint-disable-next-line no-console
 console.log(`Day 4, part 1: ${part1}`);
 // eslint-disable-next-line no-console
-console.log(`Day 4, part 1: ${part2}`);
+console.log(`Day 4, part 2: ${part2}`);
