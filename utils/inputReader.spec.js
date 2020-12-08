@@ -1,6 +1,6 @@
 import chai from 'chai';
 import {
-  toArrayOfNumbers, toArrayOfText, toFieldBooleans, separatedByBlankLines,
+  toArrayOfNumbers, toArrayOfText, toFieldBooleans, separatedByBlankLines, toKeyValue, toKeyValueInt,
 } from './inputReader.js';
 
 const { expect } = chai;
@@ -64,6 +64,46 @@ describe('Input readers', () => {
       const result = separatedByBlankLines('./day-4/inputs/example.txt');
 
       expect(result).to.be.deep.equal(expectedResult);
+    });
+  });
+  describe('toKeyValue', () => {
+    it('should return a list of key values', () => {
+      const expectedResult = [
+        { key: 'nop', value: '+0' },
+        { key: 'acc', value: '+1' },
+        { key: 'jmp', value: '+4' },
+        { key: 'acc', value: '+3' },
+        { key: 'jmp', value: '-3' },
+        { key: 'acc', value: '-99' },
+        { key: 'acc', value: '+1' },
+        { key: 'jmp', value: '-4' },
+        { key: 'acc', value: '+6' },
+      ];
+
+      const separator = ' ';
+      const result = toKeyValue('./day-08/inputs/example.txt', separator);
+
+      expect(expectedResult).to.be.deep.equal(result);
+    });
+  });
+  describe('toKeyValueInt', () => {
+    it('should return a list of key values, which teh values are integet', () => {
+      const expectedResult = [
+        { key: 'nop', value: 0 },
+        { key: 'acc', value: 1 },
+        { key: 'jmp', value: 4 },
+        { key: 'acc', value: 3 },
+        { key: 'jmp', value: -3 },
+        { key: 'acc', value: -99 },
+        { key: 'acc', value: 1 },
+        { key: 'jmp', value: -4 },
+        { key: 'acc', value: 6 },
+      ];
+
+      const separator = ' ';
+      const result = toKeyValueInt('./day-08/inputs/example.txt', separator);
+
+      expect(expectedResult).to.be.deep.equal(result);
     });
   });
 });

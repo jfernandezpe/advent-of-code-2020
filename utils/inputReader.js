@@ -4,6 +4,22 @@ import { replaceAll } from './string.js';
 export const toArrayOfNumbers = (filepath) => toArrayOfText(filepath)
   .map((number) => parseInt(number, 10));
 
+export const toKeyValueInt = (filepath, separator) => toKeyValue(filepath, separator)
+  .map(({ key, value }) => ({
+    key,
+    value: parseInt(value, 10),
+  }));
+
+export const toKeyValue = (filepath, separator) => toArrayOfText(filepath)
+  .map((item) => {
+    const [key, value] = item.split(separator);
+
+    return {
+      key,
+      value,
+    };
+  });
+
 export const toArrayOfText = (filepath) => {
   const content = toText(filepath);
   return content.split('\n')

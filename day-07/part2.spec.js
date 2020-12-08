@@ -13,11 +13,11 @@ describe('day 7 - part 2', () => {
   beforeEach(() => {
     rules = toArrayOfText('./day-07/inputs/example.txt');
   });
-  xdescribe('resolvePart2', () => {
+  describe('resolvePart2', () => {
     it('should return how many individual bags are required inside a single shiny gold bag', () => {
       const result = resolvePart2(rules);
 
-      expect(126).to.be.equal(result);
+      expect(32).to.be.equal(result);
     });
   });
   describe('requiredBagInside', () => {
