@@ -18,14 +18,14 @@ describe('day 8 - part 2', () => {
     it('should calculate the value in the accumulator before run instruction a second time', () => {
       const result = resolvePart2(instructions);
 
-      expect(8).to.be.equal(result);
+      expect(result).to.be.equal(8);
     });
     it('should calculate the value of the input quest', () => {
       instructions = openAndParseInput('./day-08/inputs/quest.txt');
 
       const result = resolvePart2(instructions);
 
-      expect(2188).to.be.equal(result);
+      expect(result).to.be.equal(2188);
     });
   });
   describe('generatePossibleAlterations', () => {

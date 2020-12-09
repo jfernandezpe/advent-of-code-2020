@@ -18,7 +18,7 @@ describe('day8 - part 1', () => {
     it('should calculate the value in the accumulator before run instruction a second time', () => {
       const result = resolvePart1(instructions);
 
-      expect(5).to.be.equal(result);
+      expect(result).to.be.equal(5);
     });
   });
   describe('calculateNextStep', () => {

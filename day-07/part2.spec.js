@@ -17,7 +17,7 @@ describe('day 7 - part 2', () => {
     it('should return how many individual bags are required inside a single shiny gold bag', () => {
       const result = resolvePart2(rules);
 
-      expect(32).to.be.equal(result);
+      expect(result).to.be.equal(32);
     });
   });
   describe('requiredBagInside', () => {
@@ -27,14 +27,14 @@ describe('day 7 - part 2', () => {
 
         const result = requiredBagInside('shiny gold', exmple1);
 
-        expect(4).to.be.equal(result);
+        expect(result).to.be.equal(4);
       });
       it('should return 33 with the full example', () => {
         const exmple1 = parseRules(toArrayOfText('./day-07/inputs/example.txt'));
 
         const result = requiredBagInside('shiny gold', exmple1);
 
-        expect(33).to.be.equal(result);
+        expect(result).to.be.equal(33);
       });
     });
     describe('with the example 2 data', () => {
@@ -43,28 +43,28 @@ describe('day 7 - part 2', () => {
 
         const result = requiredBagInside('shiny gold', tdd0rules);
 
-        expect(1).to.be.equal(result);
+        expect(result).to.be.equal(1);
       });
       it('should calculate the total bags when there is 1 nested level', () => {
         const tdd1rules = parseRules(toArrayOfText('./day-07/inputs/part2-1levels.txt'));
 
         const result = requiredBagInside('shiny gold', tdd1rules);
 
-        expect(3).to.be.equal(result);
+        expect(result).to.be.equal(3);
       });
       it('should calculate the total bags when there is 2 nested levels', () => {
         const tdd0rules = parseRules(toArrayOfText('./day-07/inputs/part2-2levels.txt'));
 
         const result = requiredBagInside('shiny gold', tdd0rules);
 
-        expect(7).to.be.equal(result);
+        expect(result).to.be.equal(7);
       });
       it('should calculate the total bags when there is 3 nested levels', () => {
         const tdd0rules = parseRules(toArrayOfText('./day-07/inputs/part2-3levels.txt'));
 
         const result = requiredBagInside('shiny gold', tdd0rules);
 
-        expect(15).to.be.equal(result);
+        expect(result).to.be.equal(15);
       });
     });
   });

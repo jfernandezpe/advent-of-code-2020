@@ -83,7 +83,7 @@ describe('Input readers', () => {
       const separator = ' ';
       const result = toKeyValue('./day-08/inputs/example.txt', separator);
 
-      expect(expectedResult).to.be.deep.equal(result);
+      expect(result).to.be.deep.equal(expectedResult);
     });
   });
   describe('toKeyValueInt', () => {
@@ -103,7 +103,7 @@ describe('Input readers', () => {
       const separator = ' ';
       const result = toKeyValueInt('./day-08/inputs/example.txt', separator);
 
-      expect(expectedResult).to.be.deep.equal(result);
+      expect(result).to.be.deep.equal(expectedResult);
     });
   });
 });

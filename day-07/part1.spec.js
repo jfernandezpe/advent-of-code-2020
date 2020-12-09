@@ -31,7 +31,7 @@ describe('day 7 - part 1', () => {
 
         const result = getChildren('shiny gold', parsedRules);
 
-        expect(expectedResult).to.be.deep.equal(result);
+        expect(result).to.be.deep.equal(expectedResult);
       });
     });
   });
@@ -46,7 +46,7 @@ describe('day 7 - part 1', () => {
 
           const result = bagThatEnable('shiny gold', parsedRules);
 
-          expect(expectedResult).to.be.deep.equal(result);
+          expect(result).to.be.deep.equal(expectedResult);
         });
       });
     });
@@ -60,7 +60,7 @@ describe('day 7 - part 1', () => {
 
           const result = bagThatEnable('shiny gold', parsedRules);
 
-          expect(expectedResult).to.be.deep.equal(result);
+          expect(result).to.be.deep.equal(expectedResult);
         });
       });
     });
@@ -76,7 +76,7 @@ describe('day 7 - part 1', () => {
 
           const result = bagThatEnable('shiny gold', parsedRules);
 
-          expect(expectedResult).to.be.deep.equal(result);
+          expect(result).to.be.deep.equal(expectedResult);
         });
       });
     });
