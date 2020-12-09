@@ -16,6 +16,13 @@ export const removeDuplicates = (array) => array.reduce((acc, item) => {
   return [...acc, item];
 }, []);
 
+export const fillArrayRange = (min, max) => {
+  const length = max - min + 1;
+  const array = new Array(length).fill(0);
+
+  return array.map((item, index) => index + min);
+};
+
 export const fillArray = (length, input, array = []) => {
   if (array.length > length) {
     return removeSurpus(array, length);
