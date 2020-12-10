@@ -26,7 +26,7 @@ const recursiveDiscoverNumbers = (target, numbers, quantity, foundedResult = [])
 const matchWithAnotherNumber = (target, numbersButCurrent, numberA, foundedResult) => numbersButCurrent
   .filter((number) => sum([numberA, number, ...foundedResult]) === target);
 
-  //TODO: I should refactor this function. Avoiding for/while do it much complex
+// TODO: I should refactor this function. Avoiding for/while do it much complex
 export const discoverContiguousNumberThanSum = (target, list) => {
   const maximun = list.length;
 
