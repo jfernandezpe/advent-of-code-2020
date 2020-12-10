@@ -1,5 +1,5 @@
 import { discoverContiguousNumberThanSum } from '../utils/discoverNumberThanSum.js';
-import { findFirstNumberIsNotTheSumOfPreviousNumbers } from './part1.js';
+import { findTheError } from './part1.js';
 
 export const resolvePart2 = (numbers) => {
   const preamble = 25;
@@ -16,7 +16,7 @@ export const findEncryptionWeakness = (numbers, preamble) => {
 };
 
 export const findContiguousThanSumTheError = (numbers, preamble) => {
-  const { number, index } = findFirstNumberIsNotTheSumOfPreviousNumbers(numbers, preamble);
+  const { number, index } = findTheError(numbers, preamble);
 
   const numbersWhereIsTheError = numbers.slice(0, index);
 

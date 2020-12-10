@@ -11,7 +11,7 @@ describe('day 3 - part 1', () => {
   const numMovInX = 3;
   const numOfRows = 11;
   beforeEach(() => {
-    field = getFieldOfTrees('./day-3/inputs/example.txt');
+    field = getFieldOfTrees('./day-03/inputs/example.txt');
   });
   describe('getNumberOfTreesOnPath', () => {
     describe('given a field', () => {

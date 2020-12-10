@@ -3,8 +3,8 @@ import chai from 'chai';
 import { toArrayOfNumbers } from '../utils/inputReader.js';
 import {
   resolvePart1,
-  findFirstNumberIsNotTheSumOfPreviousNumbers,
-  isNumberSumOfTwoInList,
+  findTheError,
+  isNumberSumOfTwo,
 } from './part1.js';
 
 const { expect } = chai;
@@ -24,12 +24,12 @@ describe('day9 - part 1', () => {
     });
   });
 
-  describe('findFirstNumberIsNotTheSumOfPreviousNumbers', () => {
+  describe('findTheError', () => {
     describe('given an preamble', () => {
       it('should return the first number which is not the sum of two previous number', () => {
         const preamble = 5;
 
-        const { number } = findFirstNumberIsNotTheSumOfPreviousNumbers(numbers, preamble);
+        const { number } = findTheError(numbers, preamble);
 
         expect(number).to.be.equal(127);
       });
@@ -37,19 +37,19 @@ describe('day9 - part 1', () => {
       it("should return the first number's index which is not the sum of two previous number", () => {
         const preamble = 5;
 
-        const { index } = findFirstNumberIsNotTheSumOfPreviousNumbers(numbers, preamble);
+        const { index } = findTheError(numbers, preamble);
 
         expect(index).to.be.equal(14);
       });
     });
   });
 
-  describe('isNumberSumOfTwoInList', () => {
+  describe('isNumberSumOfTwo', () => {
     it('should return true when the number to check is the sum of two number in the list', () => {
       const list = [65, 95, 102, 117, 150];
       const numberToCheck = 182;
 
-      const result = isNumberSumOfTwoInList(numberToCheck, list);
+      const result = isNumberSumOfTwo(numberToCheck, list);
 
       expect(result).to.be.equal(true);
     });
@@ -58,7 +58,7 @@ describe('day9 - part 1', () => {
       const list = [95, 102, 117, 150, 182];
       const numberToCheck = 127;
 
-      const result = isNumberSumOfTwoInList(numberToCheck, list);
+      const result = isNumberSumOfTwo(numberToCheck, list);
 
       expect(result).to.be.equal(false);
     });

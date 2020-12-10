@@ -7,7 +7,7 @@ const { expect } = chai;
 describe('day 1 - part 1', () => {
   let numbers;
   beforeEach(() => {
-    numbers = toArrayOfNumbers('./day-1/inputs/example.txt');
+    numbers = toArrayOfNumbers('./day-01/inputs/example.txt');
   });
   describe('resolve part 1', () => {
     describe('given the example list', () => {

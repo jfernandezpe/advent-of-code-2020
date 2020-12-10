@@ -14,7 +14,7 @@ describe('day 3 - part 2', () => {
   let field;
 
   beforeEach(() => {
-    field = getFieldOfTrees('./day-3/inputs/example.txt');
+    field = getFieldOfTrees('./day-03/inputs/example.txt');
   });
 
   describe('removeRows', () => {
@@ -25,7 +25,7 @@ describe('day 3 - part 2', () => {
         expect(result).to.be.deep.equal(field);
       });
       it('should not remove any field if number of movmenet is 2', () => {
-        const fieldOnlyOdd = getFieldOfTrees('./day-3/inputs/fieldOnlyOdd.txt');
+        const fieldOnlyOdd = getFieldOfTrees('./day-03/inputs/fieldOnlyOdd.txt');
 
         const result = removeRows(field, 2);
 

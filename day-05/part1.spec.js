@@ -9,7 +9,7 @@ const { expect } = chai;
 describe('day 5 - part 1', () => {
   let seatCodes;
   beforeEach(() => {
-    seatCodes = toArrayOfText('./day-5/inputs/example.txt');
+    seatCodes = toArrayOfText('./day-05/inputs/example.txt');
   });
   describe('resolvePart1', () => {
     it('should return the maximun seta ID in the example', () => {

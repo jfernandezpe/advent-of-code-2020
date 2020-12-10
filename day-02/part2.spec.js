@@ -7,7 +7,7 @@ const { expect } = chai;
 describe('day 2 - part 2', () => {
   let passwords;
   beforeEach(() => {
-    passwords = toArrayOfText('./day-2/inputs/example.txt');
+    passwords = toArrayOfText('./day-02/inputs/example.txt');
   });
   describe('getNumberOfValidPasswords', () => {
     describe('given the password table', () => {

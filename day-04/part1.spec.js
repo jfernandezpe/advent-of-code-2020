@@ -7,7 +7,7 @@ const { expect } = chai;
 describe('day 4 - part 1', () => {
   let passports;
   beforeEach(() => {
-    passports = separatedByBlankLines('./day-4/inputs/example.txt');
+    passports = separatedByBlankLines('./day-04/inputs/example.txt');
   });
   describe('resolvePart1', () => {
     it('should return the number of valid passports', () => {

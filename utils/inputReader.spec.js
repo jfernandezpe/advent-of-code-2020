@@ -11,7 +11,7 @@ describe('Input readers', () => {
       it('should return the content as an array of numbers', () => {
         const expectedList = [1721, 979, 366, 299, 675, 1456];
 
-        const result = toArrayOfNumbers('./day-1/inputs/example.txt');
+        const result = toArrayOfNumbers('./day-01/inputs/example.txt');
 
         expect(result).to.be.deep.equal(expectedList);
       });
@@ -22,7 +22,7 @@ describe('Input readers', () => {
       it('should return the content as an array of text', () => {
         const expectedList = ['1-3 a: abcde', '1-3 b: cdefg', '2-9 c: ccccccccc'];
 
-        const result = toArrayOfText('./day-2/inputs/example.txt');
+        const result = toArrayOfText('./day-02/inputs/example.txt');
 
         expect(result).to.be.deep.equal(expectedList);
       });
@@ -45,7 +45,7 @@ describe('Input readers', () => {
           [false, true, false, false, true, false, false, false, true, false, true],
         ];
 
-        const result = toFieldBooleans('./day-3/inputs/example.txt', '#');
+        const result = toFieldBooleans('./day-03/inputs/example.txt', '#');
 
         expect(result).to.be.deep.equal(expectedResult);
       });
@@ -61,7 +61,7 @@ describe('Input readers', () => {
 
       ];
 
-      const result = separatedByBlankLines('./day-4/inputs/example.txt');
+      const result = separatedByBlankLines('./day-04/inputs/example.txt');
 
       expect(result).to.be.deep.equal(expectedResult);
     });

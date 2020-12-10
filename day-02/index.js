@@ -2,7 +2,7 @@ import { toArrayOfText } from '../utils/inputReader.js';
 import { getNumberOfValidPasswords } from './part1.js';
 import { getNumberOfValidPasswords as getResultPart2 } from './part2.js';
 
-const passwords = toArrayOfText('./day-2/inputs/quest.txt');
+const passwords = toArrayOfText('./day-02/inputs/quest.txt');
 const part1 = getNumberOfValidPasswords(passwords);
 const part2 = getResultPart2(passwords);
 
