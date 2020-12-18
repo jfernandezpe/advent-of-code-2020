@@ -1,6 +1,12 @@
 import chai from 'chai';
 import {
-  toArrayOfNumbers, toArrayOfText, toFieldBooleans, separatedByBlankLines, toKeyValue, toKeyValueInt,
+  toArrayOfNumbers,
+  toArrayOfText,
+  toFieldBooleans,
+  toFieldValues,
+  separatedByBlankLines,
+  toKeyValue,
+  toKeyValueInt,
 } from './inputReader.js';
 
 const { expect } = chai;
@@ -46,6 +52,29 @@ describe('Input readers', () => {
         ];
 
         const result = toFieldBooleans('./day-03/inputs/example.txt', '#');
+
+        expect(result).to.be.deep.equal(expectedResult);
+      });
+    });
+  });
+  describe('toFieldOfValues', () => {
+    describe('given a pathfile with text', () => {
+      it('should return an with a field', () => {
+        const expectedResult = [
+          [2, 0, 1, 1, 0, 1, 2, 0, 2, 2],
+          [2, 1, 1, 1, 1, 1, 1, 0, 1, 2],
+          [1, 0, 1, 0, 1, 0, 0, 1, 0, 0],
+          [2, 1, 1, 1, 0, 1, 1, 0, 1, 2],
+          [2, 0, 1, 1, 0, 1, 1, 0, 1, 1],
+          [2, 0, 1, 1, 1, 1, 2, 0, 2, 2],
+          [0, 0, 1, 0, 1, 0, 0, 0, 0, 0],
+          [2, 1, 1, 1, 1, 1, 1, 1, 1, 2],
+          [2, 0, 1, 1, 1, 1, 1, 1, 0, 1],
+          [2, 0, 2, 1, 1, 1, 1, 0, 2, 2],
+        ];
+
+        const values = [{ key: '.', value: 0 }, { key: 'L', value: 1 }, { key: '#', value: 2 }];
+        const result = toFieldValues('./day-11/inputs/part1/example2.txt', values);
 
         expect(result).to.be.deep.equal(expectedResult);
       });

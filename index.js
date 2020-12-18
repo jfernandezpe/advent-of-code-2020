@@ -8,3 +8,4 @@ import './day-07/index.js';
 import './day-08/index.js';
 import './day-09/index.js';
 import './day-10/index.js';
+import './day-11/index.js';

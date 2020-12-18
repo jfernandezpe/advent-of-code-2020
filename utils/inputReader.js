@@ -36,6 +36,13 @@ export const toFieldBooleans = (filepath, trueChar) => {
   return field.map((row) => row.map((cell) => cell === trueChar));
 };
 
+export const toFieldValues = (filepath, values) => {
+  const files = toArrayOfText(filepath);
+  const field = files.map((row) => row.split(''));
+
+  return field.map((row) => row.map((cell) => values.find((value) => value.key === cell).value));
+};
+
 export const separatedByBlankLines = (filepath) => {
   const result = toText(filepath).split('\n\r');
 

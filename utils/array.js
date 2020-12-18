@@ -38,3 +38,5 @@ export const fillArray = (length, input, array = []) => {
 const removeSurpus = (array, length) => array.slice(0, length);
 
 export const sortNumbers = (array) => array.sort((a, b) => a - b);
+
+export const areDeepEqual = (array1, array2) => JSON.stringify(array1) === JSON.stringify(array2);
