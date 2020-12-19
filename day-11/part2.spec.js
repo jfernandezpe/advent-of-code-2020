@@ -7,7 +7,7 @@ import {
   resolvePart2,
   getNextState,
   getSeatNextState,
-  calcNumberOccupiedSeats,
+  calcNumberOccupiedSeatsVisible,
 } from './part2.js';
 
 const { expect } = chai;
@@ -35,7 +35,7 @@ describe('day11 - part 2', () => {
       const result = resolvePart2(quest);
 
       expect(result).to.be.equal(2259);
-    });
+    }).timeout(5000);
   });
 
   describe('getNextState', () => {
@@ -104,13 +104,13 @@ describe('day11 - part 2', () => {
       });
     });
   });
-  describe('calcNumberOccupiedSeats', () => {
+  describe('calcNumberOccupiedSeatsVisible', () => {
     it('should see 8 occupied seat in the visibility example 1', () => {
       const x = 4;
       const y = 3;
       const layout = toSeatsLayout('./day-11/inputs/part2/visibility1.txt');
 
-      const numberOccupiedSeats = calcNumberOccupiedSeats(x, y, layout);
+      const numberOccupiedSeats = calcNumberOccupiedSeatsVisible(x, y, layout);
 
       expect(numberOccupiedSeats).to.be.equal(8);
     });

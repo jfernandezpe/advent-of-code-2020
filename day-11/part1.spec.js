@@ -28,11 +28,11 @@ describe('day11 - part 1', () => {
 
       expect(result).to.be.equal(37);
     });
-    xit('should calculate the quest result for the quest input', () => {
+    it('should calculate the quest result for the quest input', () => {
       const result = resolvePart1(quest);
 
       expect(result).to.be.equal(2470);
-    });
+    }).timeout(5000);
   });
 
   describe('getNextState', () => {

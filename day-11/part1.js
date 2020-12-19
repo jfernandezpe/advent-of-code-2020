@@ -23,42 +23,45 @@ const calculateEndUpOccupiedFiles = (waitingAreaLayout) => {
   return calculateEndUpOccupiedFiles(newState);
 };
 
-const countOccupied = (layout) => layout.flat().reduce((count, value) => {
-  if (value === OCCUPIED) {
-    return count + 1;
-  }
-  return count;
-}, 0);
+export const countOccupied = (layout) => layout.flat().filter((value) => value === OCCUPIED).length;
 
 export const getNextState = (layout) => layout
   .map((row, x) => row.map((cell, y) => getSeatNextState(x, y, layout)));
 
-// TODO: Optimize
-// TODO: refactor part 2 in order to enable part 1 using part 2
 export const getSeatNextState = (x, y, layout) => {
-  const adjacentStates = getAdjacentStates(x, y, layout);
+  const numberOcupiedSeats = calcNumberOccupiedSeatsAdjacent(x, y, layout);
   const seatState = getSeatState(x, y, layout);
   if (seatState === EMPTY) {
-    return adjacentStates.filter((state) => state === OCCUPIED).length === 0 ? OCCUPIED : EMPTY;
+    return numberOcupiedSeats === 0 ? OCCUPIED : EMPTY;
   }
   if (seatState === OCCUPIED) {
-    return adjacentStates.filter((state) => state === OCCUPIED).length >= 4 ? EMPTY : OCCUPIED;
+    return numberOcupiedSeats >= 4 ? EMPTY : OCCUPIED;
   }
   return FLOOR;
 };
 
-const getSeatState = (x, y, layout) => layout[x][y];
-const getAdjacentStates = (x, y, layout) => {
-  const adjacentRows = layout
-    .filter((row, index) => index + 1 === x || index - 1 === x || index === x);
+// eslint-disable-next-line max-len
+export const calcNumberOccupiedSeatsAdjacent = (x, y, layout) => calcNumberOccupiedSeats(x, y, layout, getAdjacentSeat);
 
-  const adjacentSeats = adjacentRows.map((row, rowIndex) => row.filter((cell, index) => {
-    const isInnerSeat = rowIndex === 1 && index === y;
-    if (isInnerSeat) {
-      return index + 1 === y || index - 1 === y;
-    }
-    return index + 1 === y || index - 1 === y || index === y;
-  }));
+export const calcNumberOccupiedSeats = (x, y, layout, searchEngine) => {
+  // Directions:
+  const NW = searchEngine(x, y, -1, -1, layout);
+  const N = searchEngine(x, y, -1, 0, layout);
+  const NE = searchEngine(x, y, -1, 1, layout);
+  const E = searchEngine(x, y, 0, 1, layout);
+  const SE = searchEngine(x, y, 1, 1, layout);
+  const S = searchEngine(x, y, 0, -1, layout);
+  const SW = searchEngine(x, y, 1, -1, layout);
+  const W = searchEngine(x, y, 1, 0, layout);
 
-  return adjacentSeats.flat();
+  const seats = [NW, N, NE, E, SE, S, SW, W];
+  return countOccupied(seats);
+};
+
+// eslint-disable-next-line max-len
+export const getAdjacentSeat = (x, y, movX, movY, layout) => getSeatState(x + movX, y + movY, layout);
+
+const getSeatState = (x, y, layout) => {
+  const row = layout[x] || [];
+  return row[y];
 };
