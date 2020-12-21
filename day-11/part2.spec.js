@@ -26,12 +26,12 @@ describe('day11 - part 2', () => {
     quest = toSeatsLayout('./day-11/inputs/quest.txt');
   });
   describe('resolvePart2', () => {
-    it('should calculate 26 occupied seats for the input example', () => {
+    it('should calculate the sum of positions for the example', () => {
       const result = resolvePart2(example);
 
       expect(result).to.be.equal(26);
     });
-    it('should calculate the quest result for the quest input', () => {
+    it('should calculate the sum of positions for the quest', () => {
       const result = resolvePart2(quest);
 
       expect(result).to.be.equal(2259);

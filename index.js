@@ -10,3 +10,4 @@ import './day-09/index.js';
 import './day-10/index.js';
 import './day-11/index.js';
 import './day-12/index.js';
+import './day-13/index.js';
